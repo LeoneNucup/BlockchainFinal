@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Checklist DApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #6200ea;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header button {
+            background-color: #03dac5;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .account-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .task {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        button {
+            background-color: #6200ea;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #3700b3;
+        }
+
+        #taskInput {
+            width: 75%;
+            padding: 8px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <h2>Task Checklist DApp</h2>
+        </div>
+        <div class="account-info">
+            <button onclick="connectWallet()">Connect Wallet</button>
+            <span id="account">Not Connected</span>
+            <span id="walletBalance">Balance: N/A</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <input type="text" id="taskInput" placeholder="Enter new task...">
+        <button onclick="addTask()">Add Task</button>
+
+        <div id="taskList"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.3.5/dist/web3.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
