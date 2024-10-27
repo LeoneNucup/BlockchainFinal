@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 contract TaskChecklist {
     address public sourceWallet;
+
     struct Task {
         string description;
         bool isCompleted;
@@ -14,17 +15,18 @@ contract TaskChecklist {
     event TaskCompleted(uint256 indexed taskIndex, address indexed completer, uint256 reward);
 
     constructor(address _sourceWallet) {
-        sourceWallet = _sourceWallet; // Set the source wallet address during contract deployment
+        sourceWallet = _sourceWallet;
     }
 
-    // Function to create a task
+
     function createTask(string memory _description) public {
+        require(msg.sender == sourceWallet, "Only the source wallet can create tasks");
         tasks.push(Task(_description, false));
         emit TaskCreated(_description, msg.sender);
     }
 
-    // Function to mark a task as completed
-    function completeTask(uint _index) public {
+
+    function completeTask(uint256 _index) public {
         require(_index < tasks.length, "Task index out of bounds");
         require(!tasks[_index].isCompleted, "Task already completed");
 
