@@ -7,78 +7,108 @@
     <title>Task Checklist DApp</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
-            margin: 0;
-            padding: 0;
-        }
 
-        .header {
-            background-color: #6200ea;
-            color: #fff;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            body {
+                font-family: "Ubuntu", sans-serif;
+                background-color: #3C3D37;
+                margin: 0;
+                padding: 0;
+            }
 
-        .header button {
-            background-color: #03dac5;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+            .header {
+                font-family: "Barlow", sans-serif;
+                background-color: #181C14;
+                color: #fff;
+                padding: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 5px;
+            }
 
-        .account-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
+            .header button {
+                font-family: "Barlow", sans-serif;
+                background-color: #ECDFCC;
+                border: none;
+                color: #181C14;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 14px;
+                cursor: pointer;
+                border-radius: 5px;
+            }
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+            .account-info {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
 
-        .task {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
+            .container {
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                background-color: #697565;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
 
-        .completed {
-            text-decoration: line-through;
-            color: gray;
-        }
+            .task {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                color: white;
 
-        button {
-            background-color: #6200ea;
-            border: none;
-            color: white;
-            padding: 8px 12px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+            }
 
-        button:hover {
-            background-color: #3700b3;
-        }
+            .task p {
+                color: white;
 
-        #taskInput {
-            width: 75%;
-            padding: 8px;
-            margin-right: 10px;
+            }
+
+            .completed {
+                text-decoration: line-through;
+                color: white;
+            }
+
+            button {
+                font-family: "Barlow", sans-serif;
+                background-color: #181C14;
+                border: none;
+                color: white;
+                padding: 8px 12px;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 14px;
+            }
+
+            button:hover {
+                background-color: #003624;
+            }
+
+            #taskInput {
+                width: 75%;
+                padding: 8px;
+                margin-right: 10px;
+            }
+
+            .nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .nav a {
+                color: white;
+                text-decoration: none;
+                border: none;
+                padding: 8px 12px;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -86,7 +116,7 @@
 <body>
     <div class="header">
         <div>
-            <h2>Task Checklist DApp</h2>
+            <h2>Task Checklist</h2>
         </div>
         <div class="account-info">
             <button onclick="connectWallet()">Connect Wallet</button>
@@ -102,7 +132,7 @@
         <input type="text" id="taskInput" placeholder="Enter new task...">
         <button onclick="addTask()">Add Task</button>
 
-        <div id="taskList"></div>
+        <p type="text" id="taskList"></p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.3.5/dist/web3.min.js"></script>
